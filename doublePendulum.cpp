@@ -14,18 +14,6 @@ DoublePendulum::DoublePendulum(double theta1, double theta2) {
 }
 
 void DoublePendulum::step(double deltaT) {
-	/*
-	m_1, m_2 = self.m[:, 0], self.m[:, 1]
-        t_1, t_2 = self.t[:, 0], self.t[:, 1]
-        l_1, l_2 = self.l[:, 0], self.l[:, 1]
-        t_d1, t_d2 = self.t_d[:, 0], self.t_d[:, 1]
-        bottom = (2 * m_1) + m_2 - (m_2 * np.cos(2 * (t_1 - t_2)))
-        theta_dd1 = (-self.g * (2 * m_1 + m_2) * np.sin(t_1) - m_2 * self.g * np.sin(t_1 - 2 * t_2) - 2 * np.sin(t_1 - t_2) * m_2 * (t_d2**2 * l_2 + t_d1**2 * l_1 * np.cos(t_1 - t_2))) / (l_1 * bottom)
-        theta_dd2 = (2 * np.sin(t_1 - t_2) * (t_d1**2 * l_1 * (m_1 + m_2) + self.g * (m_1 + m_2) * np.cos(t_1) + t_d2**2 * l_2 * m_2 * np.cos(t_1 - t_2))) / (l_2 * bottom)
-        self.t_d[:, 0] += delta_t * theta_dd1
-        self.t_d[:, 1] += delta_t * theta_dd2
-        self.t += delta_t * self.t_d
-	*/
 	double twoM1M2 = (2.0 * _mass1) + _mass2;
 	double deltaTheta1Sq = pow(_deltaTheta1, 2.0);
 	double deltaTheta2Sq = pow(_deltaTheta2, 2.0);
